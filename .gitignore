@@ -1,0 +1,19 @@
+# Node.JS dependencies
+
+node_modules/
+package-lock.json
+
+# Logs
+
+logs/
+*.log
+
+# Arquivos de debug ou arquivos temporarios
+
+*.tmp
+*.bak
+*.swp
+
+# Arquivo de configuração do bot
+
+.env
