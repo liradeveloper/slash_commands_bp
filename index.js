@@ -7,10 +7,20 @@ const Client = new Discord.Client({ intents: 131071 });
 const fs = require("fs");
 const path = require("path");
 const colors = require("colors");
-const env = require("dotenv");
 
-// Configurando o dot env. || Startando o bot.
+// Requisitando e configurando o dotenv para puxar o token do arquivo .env
 
-env.config();
+require("dotenv").config();
+
+// Declarando a coleção de comandos
+
+Client.commands = new Discord.Collection();
+
+// Carregando as handlers de comandos e eventos
+
+require("./src/handlers/commandHandler.js")(Client);
+require("./src/handlers/eventHandler.js")(Client);
+
+// Startando o bot.
 
 Client.login(process.env.TOKEN);
